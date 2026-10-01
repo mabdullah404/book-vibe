@@ -1,6 +1,6 @@
 
 
-import BookCard from "../shared/BookCard";
+import BookCard from "@/components/shared/BookCard";
 import { IBook } from "@/types/books.types";
 
 const getBooks = async () => {
@@ -20,7 +20,7 @@ const Books = async () => {
       {/* Page Title */}
       <div className="mx-auto mb-10 ">
         <h1 className="text-3xl font-bold text-gray-900 flex justify-center ">
-          Explore Books
+          Explore All Books
         </h1>
 
         <p className="mt-2 text-gray-500 flex justify-center" >
@@ -29,9 +29,9 @@ const Books = async () => {
       </div>
 
       {/* Book Grid */}
-      <div className="container mx-auto grid  grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+      <div className="container mx-auto grid  grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         
-        {getData.slice(0,6).map((book :IBook ) => (
+        {getData.map((book :IBook ) => (
           <BookCard key={book.bookId} book={book}></BookCard>
         ))}
 
